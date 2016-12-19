@@ -1,0 +1,8 @@
+---
+
+- name: Update sysconfig
+  lineinfile: dest=/etc/sysconfig/selinux
+    regexp=^SELINUX=
+    line=SELINUX=disabled
+
+# reboot the machine

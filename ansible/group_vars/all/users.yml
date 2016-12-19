@@ -1,0 +1,28 @@
+---
+
+admin_users:
+  - manager
+  - satish
+  - raghu
+
+users:
+  shanker:
+    comment: "manager"
+    password: "we have create generate passwod"
+    authorized_keys:
+      - "ssh-rsa key is removed" 
+    state: present
+
+  naren:
+    comment: "satish"
+    password: ""
+    authorized_keys:
+      - "ssh-rsa keys is remved"
+    state: present
+
+  rishu:
+    comment: "raghu"
+    password: ""
+    authorized_keys:
+      - "authorizedkey is removed"
+    state: present

@@ -1,0 +1,10 @@
+#Allowing root user to access the cron
+    - name: creating cron.allow file if it is not exist
+      stat: path=/etc/
+      register: p
+    - name: Creating a file
+      file: path=/etc/cron.allow state=touch owner=root  mode=0644
+      when: p.stat.exists is defined and p.stat.exists   
+
+    - name: Allowing only root User to Access the cron file
+      lineinfile: dest=/etc/cron.allow state=present line="root"  
