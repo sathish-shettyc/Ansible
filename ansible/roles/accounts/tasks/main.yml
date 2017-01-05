@@ -1,0 +1,37 @@
+---
+
+- name: Create groups
+  group:
+    name: "{{item}}"
+    state: present
+  with_items: "{{admin_users}}"
+
+- name: Create user
+  user:
+    name: "{{item}}"
+    password: "{{users[item]['password']|default('!')}}"
+    #uid: '{{users[item]['uid']}}'
+    group: "{{item}}"
+    shell: "{{users[item]['shell']|default('/bin/bash')}}"
+    state: present
+  with_items: "{{admin_users}}"
+  when: users[item]['state'] == 'present'
+
+- name: Update sudoers
+  user:
+    name: '{{item}}'
+    groups: wheel
+    append: yes
+    state: present
+  when: users[item]['state'] == 'present'
+  with_items: '{{admin_users}}'
+  tags: sudo
+
+- name: Update keys
+  authorized_key:
+    user: "{{item}}"
+    exclusive: yes
+    key: "{{users[item]['authorized_keys']|join('\n') }}"
+    state: present
+  with_items: "{{admin_users}}"
+  tags: [ ssh ]

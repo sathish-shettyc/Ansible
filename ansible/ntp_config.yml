@@ -1,0 +1,7 @@
+--- 
+- hosts: satish
+  remote_user: testuse2
+  become: yes
+  become_user: root
+  roles:
+  - ntp

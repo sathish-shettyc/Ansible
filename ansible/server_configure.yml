@@ -1,0 +1,7 @@
+---
+- hosts: satish
+  remote_user: root 
+#  become: yes
+#  become_user: root
+  roles:
+  - server_settings 

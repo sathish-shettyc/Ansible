@@ -1,0 +1,6 @@
+--- 
+ntpserver: 
+   - name: server 1.in.pool.ntp.org
+   - name: server 2.in.pool.ntp.org
+   - name: server 3.in.pool.ntp.org
+

@@ -1,0 +1,7 @@
+---
+# Changing the ssh settings
+- name: Changing port and version of ssh 
+  copy: src=files/sshd_config dest=/etc/ssh/sshd_config
+  notify:    
+  - restarting SSH
+

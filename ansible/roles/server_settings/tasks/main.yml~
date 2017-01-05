@@ -1,0 +1,11 @@
+---
+- include: ssh_configre.yml
+  tags: [ ssh ]
+- include: runlevel_configre.yml
+  tags: [ runlevel ]
+- include: turn_off_ipv6.yml
+  tags: [ ipv6 ]
+- include: cron_root_user_only.yml
+  tags: [ cron ]
+- include: ssh_configure_public.yml # this for changing ssh port number of public IP machines
+  tags: [ sshforPublicIP ]

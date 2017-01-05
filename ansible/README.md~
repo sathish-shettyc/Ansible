@@ -1,0 +1,19 @@
+# ansible
+Ansible scripts
+
+1. Add a host (example1) to inventory file "hosts"
+1. Run ansible as below
+
+ansible-playbook -i hosts login.yml -l example1
+
+
+To run NTP configuration:
+Run ansible as below
+
+ansible-playbook -i hosts  ntp_config.yml --ask-become-pass
+
+TO Run Server configuration
+Run the as below
+
+ansible-playbook -i hosts server_configure.yml --skip-tags "ssh"
+

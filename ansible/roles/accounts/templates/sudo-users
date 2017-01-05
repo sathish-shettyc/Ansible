@@ -1,0 +1,10 @@
+#
+# {{ ansible_managed }}
+#
+
+deploy ALL=(ALL) NOPASSWD:ALL
+
+# admin_users
+{% for user in admin_users %}
+{{ user}} ALL=(ALL) ALL
+{% endfor %}

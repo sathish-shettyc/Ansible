@@ -1,0 +1,4 @@
+---
+# Changing run level to 3
+- name: Setting Run Level 
+  command: /sbin/telinit 3 
