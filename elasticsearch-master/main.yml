@@ -1,0 +1,16 @@
+---
+# Elasticsearch Ansible Playbook
+- hosts: all
+#  become_user: root
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars_files:
+    - defaults/main.yml
+    - vars/sample.yml
+
+  tasks:
+    - include: tasks/main.yml
+   
+  handlers:
+    - include: handlers/main.yml

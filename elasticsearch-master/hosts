@@ -1,0 +1,10 @@
+#
+# Inventory for provisioning with Vagrant
+#
+
+#####################
+# Local Environment #
+#####################
+[all]
+54.154.216.160  ansible_connection=ssh        ansible_user=ubuntu
+
