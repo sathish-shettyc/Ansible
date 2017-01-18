@@ -1,8 +1,8 @@
-stage 'code stability'
+stage ' stability'
     build 'stability'
-stage  'code coverage'
+stage  'coverage'
     build  'coverage'
-stage 'code qulity'
+stage 'quality'
     build 'quality'
 
 stage 'ImageGenerator'
